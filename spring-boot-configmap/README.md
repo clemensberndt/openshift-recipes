@@ -1,15 +1,12 @@
 # Camel Spring Boot Config Map Example
 
 ### Description
-The Simplest possible example that demonstrates usage of Camel Java DSL and Spring.
+Demonstrates usage of Camel Java DSL and Spring.
 It uses Kubernetes ConfigMap to pass the configuration to the docker container.
 
 This quickstart run Apache Camel in a standalone Java Spring Boot container.
 It is based on Fuse 6.2 hence Camel 2.15.1 and corresponding Spring version.
 
-### Run locally
-
-    mvn clean install exec:java
 
 ### Build the project
 
@@ -33,6 +30,10 @@ It is based on Fuse 6.2 hence Camel 2.15.1 and corresponding Spring version.
 
     mvn clean install -s configuration/settings.xml -Pspring-boot-maven-plugin
     mvn spring-boot:run -s configuration/settings.xml -Pspring-boot-maven-plugin
+
+### Run locally
+
+    mvn clean install exec:java
 
 ### Running the example in OpenShift
 The example can be built and deployed using a single goal:

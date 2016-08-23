@@ -8,9 +8,9 @@ The example docker container, expects environment variables for the username and
 
 ### Start an ActiveMQ Broker
 
-    oc new-project amq-demo
+    oc new-project mq-client-spring
 
-    oc policy add-role-to-user view system:serviceaccount:amq-demo:default
+    oc policy add-role-to-user view system:serviceaccount:mq-client-spring:default
 
     oc process -f amq62-basic.json -v MQ_USERNAME=admin,MQ_PASSWORD=admin | oc create -f -
 
@@ -18,3 +18,8 @@ The example docker container, expects environment variables for the username and
 
     mvn clean install -s configuration/settings.xml
     mvn -Pf8-local-deploy -s configuration/settings.xml
+
+
+
+### Notes
+Notice that the broker service name dooesn't have any underscore or dash as those characters cause a bug that prevents the client to discover the broker.

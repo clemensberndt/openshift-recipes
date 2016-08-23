@@ -1,16 +1,16 @@
 # Camel ActiveMQ client with CDI extension
 
 ### Description
-Demonstrates usage of Camel Java DSL, CDI, [CDI Kubernetes extension](https://fabric8.io/guide/cdi.html).
+Demonstrates usage of Camel Java DSL, CDI, [CDI Kubernetes extension](https://fabric8.io/guide/cdi.html) for connecting an ActiveMQ instance.
 
 Creates a new project, and gives the default service account view role. That is needed for A-MQ Kube discovery protocol to query Kubernetes.
 The example docker container, expects environment variables for the username and password to connect to A-MQ.
 
 ### Start an ActiveMQ Broker
 
-    oc new-project amq-demo
+    oc new-project mq-client-cdi
 
-    oc policy add-role-to-user view system:serviceaccount:amq-demo:default
+    oc policy add-role-to-user view system:serviceaccount:mq-client-cdi:default
 
     oc process -f amq62-basic.json -v MQ_USERNAME=admin,MQ_PASSWORD=admin | oc create -f -
 
@@ -19,7 +19,7 @@ The example docker container, expects environment variables for the username and
     mvn clean install -s configuration/settings.xml
     mvn -Pf8-local-deploy -s configuration/settings.xml
 
-### More Examples
+### Generate the project from archetype
 You can generate this project using the following archetype. More info [here](
 https://access.redhat.com/documentation/en/red-hat-xpaas/version-0/red-hat-xpaas-a-mq-image/#example_deployment_workflow)
 
