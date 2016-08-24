@@ -7,7 +7,7 @@
     <artifactId>openshift-recipes</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
-    <name>Kubernetes for Java Recipes</name>
+    <name>OpenShift for Java Recipes</name>
 
     <modules>
         <module>hello-world</module>

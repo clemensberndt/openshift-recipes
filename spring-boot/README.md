@@ -1,7 +1,7 @@
 # Camel Spring Boot Example
 
-This quickstart run Apache Camel in a standalone Java Spring Boot container.
-It is based on Fuse 6.2 hence Camel 2.15.1 and corresponding Spring version.
+This quickstart runs Apache Camel in a standalone Java Spring Boot container.
+It is based on Fuse 6.2 hence Camel 2.15.1 and corresponding Spring versions.
 
 ### Option 1: Building (with hawt-app-maven-plugin) and running locally
 
@@ -13,7 +13,7 @@ It is based on Fuse 6.2 hence Camel 2.15.1 and corresponding Spring version.
     mvn clean install -s configuration/settings.xml -Pspring-boot-maven-plugin
     mvn spring-boot:run -s configuration/settings.xml -Pspring-boot-maven-plugin
 
-### Running the example in OpenShift
+### Run the project on OpenShift
 The example can be built and deployed using a single goal:
 
     mvn -Pf8-deploy

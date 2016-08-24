@@ -6,15 +6,13 @@ Demonstrates usage of Camel Java DSL, CDI, [CDI Kubernetes extension](https://fa
 Creates a new project, and gives the default service account view role. That is needed for A-MQ Kube discovery protocol to query Kubernetes.
 The example docker container, expects environment variables for the username and password to connect to A-MQ.
 
-### Start an ActiveMQ Broker
+### Start an ActiveMQ Broker on OpenShift
 
     oc new-project mq-client-cdi
-
     oc policy add-role-to-user view system:serviceaccount:mq-client-cdi:default
-
     oc process -f amq62-basic.json -v MQ_USERNAME=admin,MQ_PASSWORD=admin | oc create -f -
 
-### Build the project
+### Run the project on OpenShift
 
     mvn clean install -s configuration/settings.xml
     mvn -Pf8-local-deploy -s configuration/settings.xml
